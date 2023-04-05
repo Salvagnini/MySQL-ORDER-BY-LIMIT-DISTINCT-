@@ -7,7 +7,7 @@ INSERT INTO products(product, price, rating, category, brand) VALUES('MacBook,',
 -- 2
 SELECT COUNT(Price) FROM products WHERE category='laptops';
 -- 3
-SELECT category, COUNT(product) FROM products GROUP BY category;
+SELECT category, COUNT(DISTINCT brand) FROM products GROUP BY category;
 
 
 -- add table (customer) 
@@ -19,8 +19,8 @@ INSERT INTO customer(name, productID) VALUES('Nikola','3');
 INSERT INTO customer(name, productID) VALUES('Mike','8');
 INSERT INTO customer(name, productID) VALUES('Mike','9');
 -- 4
-SELECT category, COUNT(DISTINCT brand) FROM products GROUP BY category;
+SELECT name, product, price From customer Join products ON customer.productID=products.id;
 -- 5
-SELECT name, COUNT(name) AS Quantity FROM customer GROUP BY name ORDER BY Quantity DESC;
+SELECT name, COUNT(productID) AS Quantity FROM customer GROUP BY name ORDER BY COUNT(productID) DESC;
 -- 6
-SELECT category, product, price FROM customer JOIN products ON customer.productID=products.id ORDER BY category, price DESC;
+SELECT category, PRODUCT, Price from products JOIN customer ON products.id=customer.productID ORDER BY category, Price DESC;
