@@ -9,6 +9,15 @@ SELECT COUNT(Price) FROM products WHERE category='laptops';
 -- 3
 SELECT category, COUNT(product) FROM products GROUP BY category;
 
+
+-- add table (customer) 
+INSERT INTO customer(name, productID) VALUES('Mike','9');
+INSERT INTO customer(name, productID) VALUES('Bob','5');
+INSERT INTO customer(name, productID) VALUES('Nikola','11');
+INSERT INTO customer(name, productID) VALUES('Mike','14');
+INSERT INTO customer(name, productID) VALUES('Nikola','3');
+INSERT INTO customer(name, productID) VALUES('Mike','8');
+INSERT INTO customer(name, productID) VALUES('Mike','9');
 -- 4
 SELECT category, COUNT(DISTINCT brand) FROM products GROUP BY category;
 -- 5
